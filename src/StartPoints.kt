@@ -19,5 +19,8 @@ fun transposeChord_JS(chord: Chord, originKey: Key, targetKey: Key) =
     chord.transpose(originKey, targetKey)
 
 @JsName("transposeChordsText")
-fun transposeChordsText_JS(text: String, originKey: Key, targetKey: Key) =
-    ChordsText(text).transpose(originKey, targetKey).text
+fun transposeChordsText_JS(chordsText: ChordsText, originKey: Key, targetKey: Key) =
+    chordsText.transpose(originKey, targetKey)
+
+@JsName("chordsTextFromPlainText")
+fun chordsTextFromPlainText_JS(text: String) = ChordsText.fromPlainText(text)
