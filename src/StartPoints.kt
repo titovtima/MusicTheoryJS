@@ -1,6 +1,7 @@
 import titovtima.musicTheory.Chord
 import titovtima.musicTheory.ChordsText
 import titovtima.musicTheory.Key
+import titovtima.musicTheory.PlainTextAPI
 
 @JsName("chordFromName")
 fun chordFromName_JS(name: String) = Chord.chordFromName(name)
@@ -21,6 +22,9 @@ fun transposeChord_JS(chord: Chord, originKey: Key, targetKey: Key) =
 @JsName("transposeChordsText")
 fun transposeChordsText_JS(chordsText: ChordsText, originKey: Key, targetKey: Key) =
     chordsText.transpose(originKey, targetKey)
+
+@JsName("musicTextFromPlainText")
+fun musicTextFromPlainText_JS(text: String) = PlainTextAPI.musicTextFromPlainText(text)
 
 @JsName("chordsTextFromPlainText")
 fun chordsTextFromPlainText_JS(text: String) = ChordsText.fromPlainText(text)
